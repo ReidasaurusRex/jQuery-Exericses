@@ -1,0 +1,11 @@
+$(document).ready(function() {
+	$("form").on("submit", function(e) {
+		$("body").append("<li><input type = 'checkbox'>" + $("input[type='text']").val() + "<button>X</button></li>");
+	});
+	$("body").on("click", "input[type='checkbox']", function(e) {
+		$(this).parent().addClass("strikeThrough");
+	});
+	$("body").on("click", "button", function(e) {
+		$(this).parent().remove();
+	});
+});
